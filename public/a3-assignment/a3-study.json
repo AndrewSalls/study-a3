@@ -1,0 +1,184 @@
+{
+    "$schema": "https://raw.githubusercontent.com/reVISit-studies/study/main/src/parser/StudyConfigSchema.json",
+    "studyMetadata": {
+        "title": "Identifying quadrant of points in a scatter plot",
+        "version": "v1",
+        "authors": [
+            "Andrew Salls", "Samuel Darer", "Shivali Mani", "Neha Kuchipudi"
+        ],
+        "date": "2024-02-09",
+        "description": "Given a graph containing points of blue circles, blue squares, and green circles, identify which quadrant (1 and 3; x and y values have the same sign) (2 and 4; x and y values have different signs) a specific type of point is located in.",
+        "organizations": [
+            "Worcester Polytechnic Institute", "Data Visualization CS 4802"
+        ]
+    },
+    "uiConfig": {
+        "logoPath": "assets/revisitLogoSquare.svg",
+        "helpTextPath": "a3-assignment/help.md",
+        "withProgressBar": true,
+        "autoDownloadStudy": false,
+        "sidebar": true,
+        "studyEndMsg": "You have successfully completed the study. Thank you for participating!",
+        "contactEmail": "please_do_not@use.this.email"
+    },
+    "components": {
+        "instructions": {
+            "type": "markdown",
+            "path": "a3-assignment/instructions.md",
+            "response": []
+        },
+        "chart-render-1": {
+            "type": "react-component",
+            "nextButtonLocation": "sidebar",
+            "response": [
+                {
+                    "id": "chart-no-1",
+                    "type": "radio",
+                    "location": "sidebar",
+                    "hidden": false,
+                    "prompt": "Which quadrants are the data points in?",
+                    "required": true,
+                    "options": [
+                        { "label": "1 and 3", "value": 0 },
+                        { "label": "2 and 4", "value": 1 },
+                        { "label": "cannot tell", "value": 2 }
+                    ]
+                }
+            ],
+            "path": "a3-assignment/a3-study-graph-component.tsx"
+        },
+        "chart-render-2": {
+            "type": "react-component",
+            "nextButtonLocation": "sidebar",
+            "response": [
+                {
+                    "id": "chart-no-2",
+                    "type": "radio",
+                    "location": "sidebar",
+                    "hidden": false,
+                    "prompt": "Which quadrants are the data points in?",
+                    "required": true,
+                    "options": [
+                        { "label": "1 and 3", "value": 0 },
+                        { "label": "2 and 4", "value": 1 },
+                        { "label": "cannot tell", "value": 2 }
+                    ]
+                }
+            ],
+            "path": "a3-assignment/a3-study-graph-component.tsx"
+        },
+        "chart-render-3": {
+            "type": "react-component",
+            "nextButtonLocation": "sidebar",
+            "response": [
+                {
+                    "id": "chart-no-3",
+                    "type": "radio",
+                    "location": "sidebar",
+                    "hidden": false,
+                    "prompt": "Which quadrants are the data points in?",
+                    "required": true,
+                    "options": [
+                        { "label": "1 and 3", "value": 0 },
+                        { "label": "2 and 4", "value": 1 },
+                        { "label": "cannot tell", "value": 2 }
+                    ]
+                }
+            ],
+            "path": "a3-assignment/a3-study-graph-component.tsx"
+        },
+        "chart-render-4": {
+            "type": "react-component",
+            "nextButtonLocation": "sidebar",
+            "response": [
+                {
+                    "id": "chart-no-4",
+                    "type": "radio",
+                    "location": "sidebar",
+                    "hidden": false,
+                    "prompt": "Which quadrants are the data points in?",
+                    "required": true,
+                    "options": [
+                        { "label": "1 and 3", "value": 0 },
+                        { "label": "2 and 4", "value": 1 },
+                        { "label": "cannot tell", "value": 2 }
+                    ]
+                }
+            ],
+            "path": "a3-assignment/a3-study-graph-component.tsx"
+        },
+        "chart-render-5": {
+            "type": "react-component",
+            "nextButtonLocation": "sidebar",
+            "response": [
+                {
+                    "id": "chart-no-5",
+                    "type": "radio",
+                    "location": "sidebar",
+                    "hidden": false,
+                    "prompt": "Which quadrants are the data points in?",
+                    "required": true,
+                    "options": [
+                        { "label": "1 and 3", "value": 0 },
+                        { "label": "2 and 4", "value": 1 },
+                        { "label": "cannot tell", "value": 2 }
+                    ]
+                }
+            ],
+            "path": "a3-assignment/a3-study-graph-component.tsx"
+        },
+        "chart-render-6": {
+            "type": "react-component",
+            "nextButtonLocation": "sidebar",
+            "response": [
+                {
+                    "id": "chart-no-6",
+                    "type": "radio",
+                    "location": "sidebar",
+                    "hidden": false,
+                    "prompt": "Which quadrants are the data points in?",
+                    "required": true,
+                    "options": [
+                        { "label": "1 and 3", "value": 0 },
+                        { "label": "2 and 4", "value": 1 },
+                        { "label": "cannot tell", "value": 2 }
+                    ]
+                }
+            ],
+            "path": "a3-assignment/a3-study-graph-component.tsx"
+        },
+        "chart-render-7": {
+            "type": "react-component",
+            "nextButtonLocation": "sidebar",
+            "response": [
+                {
+                    "id": "chart-no-7",
+                    "type": "radio",
+                    "location": "sidebar",
+                    "hidden": false,
+                    "prompt": "Which quadrants are the data points in?",
+                    "required": true,
+                    "options": [
+                        { "label": "1 and 3", "value": 0 },
+                        { "label": "2 and 4", "value": 1 },
+                        { "label": "cannot tell", "value": 2 }
+                    ]
+                }
+            ],
+            "path": "a3-assignment/a3-study-graph-component.tsx"
+        }
+    },
+    "sequence": {
+        "order": "fixed",
+        "components": [
+            "instructions",
+            "chart-render-1",
+            "chart-render-2",
+            "chart-render-3",
+            "chart-render-4",
+            "chart-render-5",
+            "chart-render-6",
+            "chart-render-7"
+        ]
+    }
+}
