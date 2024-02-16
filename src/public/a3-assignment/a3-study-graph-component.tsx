@@ -1,41 +1,14 @@
 import * as d3 from 'd3';
 import { useRef, useEffect } from 'react';
 import { useCurrentStep } from '../../routes';
+import indices from './graph-selection.json';
+import dinosaur from './test-dinosaur.json';
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 function renderGraph() {
   // Graph number
-  const id = useCurrentStep()[-1];
+  const id = useCurrentStep();
 
-  // Load in data based on id
-  const data = [
-    [
-      0.06688441755799339,
-      -0.1625261052414077,
-      -0.4837103807719284,
-      -0.6825336291656889,
-      -0.8048886915453495,
-      -0.9272437539250097,
-      -1.1107733651159506,
-      -1.2637157019012508,
-      -1.5084198619034723,
-      -1.6766618006486922,
-    ],
-    [
-      1.832058955679908,
-      1.7892194266355583,
-      1.732105004690999,
-      1.6178724482159503,
-      1.5036361791549713,
-      1.3751250171937826,
-      1.1894957207021044,
-      1.1038203751993354,
-      0.9895878187242868,
-      0.8753552622492381,
-    ],
-  ];
-  data[0].push();
-
-  const zip = data[0].map((e, i) => ({ x: e, y: data[1][i] }));
   // Create page content
   const contentRef = useRef<HTMLDivElement>(null);
 
@@ -102,19 +75,49 @@ function renderGraph() {
         .tickFormat(() => '')
         .tickSizeOuter(0));
 
-    // Data
-    svg.append('g')
-      .selectAll('dot')
-      .data(zip)
-      .enter()
-      .append('path')
-      .attr('d', d3.symbol().type(d3.symbolCircle).size(100))
-      .attr('transform', (d) => `translate(${x(d.x)}, ${y(d.y)})`)
-      .style('fill', (d) => {
-        switch (d) { // TODO: Introduce shape & color
-          default: return '#0033FF';
+    // Load in data based on id
+    const url = 'https://raw.githubusercontent.com/shivalimani/a3-Experiment/main/json/reformatted_02_data.json';
+    const dataRead = new Request(url, {
+      method: 'GET',
+      mode: 'cors',
+      cache: 'default',
+    });
+
+    fetch(dataRead).then((r) => r.json()).then((data) => {
+      const fileIds = indices[parseInt(id.slice(-1), 10)];
+      for (let t = 0; t < 3; t += 1) {
+        let xValues: number[];
+        let yValues: number[];
+        const fId = fileIds[t];
+
+        if (fId !== null) {
+          xValues = data[fId].x;
+          yValues = data[fId].y;
+        } else {
+          xValues = dinosaur[0];
+          yValues = dinosaur[1];
         }
-      });
+
+        const zip = xValues.map((e: number, i: number) => ({ x: e, y: yValues[i] }));
+
+        // Data
+        svg.append('g')
+          .selectAll('dot')
+          .data(zip)
+          .enter()
+          .append('path')
+          .attr('d', t === 1 ? d3.symbol().type(d3.symbolCross).size(100) : d3.symbol().type(d3.symbolCircle).size(100))
+          .attr('transform', (d) => `translate(${x(d.x)}, ${y(d.y)})`)
+          .style('fill', () => {
+            switch (t) {
+              case 2:
+                return '#00FF33';
+              default:
+                return '#0033FF';
+            }
+          });
+      }
+    });
 
     // Clean up state
     return () => {
