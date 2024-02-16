@@ -3,7 +3,8 @@ import { useRef, useEffect } from 'react';
 import { useCurrentStep } from '../../routes';
 
 function renderGraph() {
-  const id = useCurrentStep();
+  // Graph number
+  const id = useCurrentStep()[-1];
 
   // Load in data based on id
   const data = [
@@ -32,6 +33,7 @@ function renderGraph() {
       0.8753552622492381,
     ],
   ];
+  data[0].push();
 
   const zip = data[0].map((e, i) => ({ x: e, y: data[1][i] }));
   // Create page content
