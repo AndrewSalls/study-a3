@@ -17,8 +17,9 @@ function renderGraph() {
     const margin = {
       top: 20, right: 20, left: 80, bottom: 50,
     };
-    const width = (2 * 400) - margin.left - margin.right;
-    const height = (2 * 400) - margin.top - margin.bottom;
+    const width = (800) - margin.left - margin.right;
+    const height = (800) - margin.top - margin.bottom;
+
     const domain = [-3, 3];
     const range = [-3, 3];
     const tickGap = 0.5;
@@ -111,7 +112,7 @@ function renderGraph() {
           .style('fill', () => {
             switch (t) {
               case 2:
-                return '#00FF33';
+                return '#11995e';
               default:
                 return '#0033FF';
             }
