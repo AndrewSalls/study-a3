@@ -166,6 +166,24 @@
                 }
             ],
             "path": "a3-assignment/a3-study-graph-component.tsx"
+        },
+        "d-conclusion": {
+            "type":"questionnaire",
+            "nextButtonLocation": "sidebar",
+            "response": [
+                {
+                    "id": "notify",
+                    "type": "radio",
+                    "location": "sidebar",
+                    "hidden": false,
+                    "prompt": "Did you notice the dinosaur made out of green circles?",
+                    "required": true,
+                    "options": [
+                        { "label": "No", "value": 0 },
+                        { "label": "Yes", "value": 1 }
+                    ]
+                }
+            ]
         }
     },
     "sequence": {
@@ -178,7 +196,8 @@
             "chart-render-4",
             "chart-render-5",
             "chart-render-6",
-            "chart-render-7"
+            "chart-render-7",
+            "d-conclusion"
         ]
     }
 }
