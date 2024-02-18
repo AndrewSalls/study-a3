@@ -1,0 +1,11 @@
+{
+    "$schema": "https://raw.githubusercontent.com/reVISit-studies/study/main/src/parser/GlobalConfigSchema.json",
+    "configsList": [
+        "a3-assignment"
+    ],
+    "configs": {
+        "a3-assignment": {
+            "path": "a3-assignment/a3-study.json"
+        }
+    }
+}
