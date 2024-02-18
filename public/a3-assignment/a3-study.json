@@ -32,19 +32,12 @@
             "nextButtonLocation": "sidebar",
             "response": [
                 {
-                    "id": "chart-no-1",
-                    "type": "checkbox",
+                    "id": "render-1-continue",
                     "location": "sidebar",
-                    "hidden": false,
-                    "prompt": "Which quadrants are the data points in?",
+                    "hidden": true,
+                    "prompt": "1-sec delay",
                     "required": true,
-                    "options": [
-                        { "label": "1", "value": 1 },
-                        { "label": "2", "value": 2 },
-                        { "label": "3", "value": 3 },
-                        { "label": "4", "value": 4 },
-                        { "label": "cannot tell", "value": 0 }
-                    ]
+                    "type": "numerical"
                 }
             ],
             "path": "a3-assignment/a3-study-graph-component.tsx"
@@ -54,19 +47,12 @@
             "nextButtonLocation": "sidebar",
             "response": [
                 {
-                    "id": "chart-no-2",
-                    "type": "checkbox",
+                    "id": "render-1-continue",
                     "location": "sidebar",
-                    "hidden": false,
-                    "prompt": "Which quadrants are the data points in?",
+                    "hidden": true,
+                    "prompt": "1-sec delay",
                     "required": true,
-                    "options": [
-                        { "label": "1", "value": 1 },
-                        { "label": "2", "value": 2 },
-                        { "label": "3", "value": 3 },
-                        { "label": "4", "value": 4 },
-                        { "label": "cannot tell", "value": 0 }
-                    ]
+                    "type": "numerical"
                 }
             ],
             "path": "a3-assignment/a3-study-graph-component.tsx"
@@ -76,19 +62,12 @@
             "nextButtonLocation": "sidebar",
             "response": [
                 {
-                    "id": "chart-no-3",
-                    "type": "checkbox",
+                    "id": "render-1-continue",
                     "location": "sidebar",
-                    "hidden": false,
-                    "prompt": "Which quadrants are the data points in?",
+                    "hidden": true,
+                    "prompt": "1-sec delay",
                     "required": true,
-                    "options": [
-                        { "label": "1", "value": 1 },
-                        { "label": "2", "value": 2 },
-                        { "label": "3", "value": 3 },
-                        { "label": "4", "value": 4 },
-                        { "label": "cannot tell", "value": 0 }
-                    ]
+                    "type": "numerical"
                 }
             ],
             "path": "a3-assignment/a3-study-graph-component.tsx"
@@ -98,19 +77,12 @@
             "nextButtonLocation": "sidebar",
             "response": [
                 {
-                    "id": "chart-no-4",
-                    "type": "checkbox",
+                    "id": "render-1-continue",
                     "location": "sidebar",
-                    "hidden": false,
-                    "prompt": "Which quadrants are the data points in?",
+                    "hidden": true,
+                    "prompt": "1-sec delay",
                     "required": true,
-                    "options": [
-                        { "label": "1", "value": 1 },
-                        { "label": "2", "value": 2 },
-                        { "label": "3", "value": 3 },
-                        { "label": "4", "value": 4 },
-                        { "label": "cannot tell", "value": 0 }
-                    ]
+                    "type": "numerical"
                 }
             ],
             "path": "a3-assignment/a3-study-graph-component.tsx"
@@ -120,19 +92,12 @@
             "nextButtonLocation": "sidebar",
             "response": [
                 {
-                    "id": "chart-no-5",
-                    "type": "checkbox",
+                    "id": "render-1-continue",
                     "location": "sidebar",
-                    "hidden": false,
-                    "prompt": "Which quadrants are the data points in?",
+                    "hidden": true,
+                    "prompt": "1-sec delay",
                     "required": true,
-                    "options": [
-                        { "label": "1", "value": 1 },
-                        { "label": "2", "value": 2 },
-                        { "label": "3", "value": 3 },
-                        { "label": "4", "value": 4 },
-                        { "label": "cannot tell", "value": 0 }
-                    ]
+                    "type": "numerical"
                 }
             ],
             "path": "a3-assignment/a3-study-graph-component.tsx"
@@ -142,19 +107,12 @@
             "nextButtonLocation": "sidebar",
             "response": [
                 {
-                    "id": "chart-no-6",
-                    "type": "checkbox",
+                    "id": "render-1-continue",
                     "location": "sidebar",
-                    "hidden": false,
-                    "prompt": "Which quadrants are the data points in?",
+                    "hidden": true,
+                    "prompt": "1-sec delay",
                     "required": true,
-                    "options": [
-                        { "label": "1", "value": 1 },
-                        { "label": "2", "value": 2 },
-                        { "label": "3", "value": 3 },
-                        { "label": "4", "value": 4 },
-                        { "label": "cannot tell", "value": 0 }
-                    ]
+                    "type": "numerical"
                 }
             ],
             "path": "a3-assignment/a3-study-graph-component.tsx"
@@ -164,33 +122,62 @@
             "nextButtonLocation": "sidebar",
             "response": [
                 {
-                    "id": "chart-no-7",
-                    "type": "checkbox",
+                    "id": "render-1-continue",
                     "location": "sidebar",
-                    "hidden": false,
-                    "prompt": "Which quadrants are the data points in?",
+                    "hidden": true,
+                    "prompt": "1-sec delay",
                     "required": true,
-                    "options": [
-                        { "label": "1", "value": 1 },
-                        { "label": "2", "value": 2 },
-                        { "label": "3", "value": 3 },
-                        { "label": "4", "value": 4 },
-                        { "label": "cannot tell", "value": 0 }
-                    ]
+                    "type": "numerical"
                 }
             ],
             "path": "a3-assignment/a3-study-graph-component.tsx"
+        },
+        "more-common": {
+            "type":"questionnaire",
+            "nextButtonLocation": "belowStimulus",
+            "response": [
+                {
+                    "id": "major-quadrant",
+                    "type": "radio",
+                    "location": "aboveStimulus",
+                    "hidden": false,
+                    "prompt": "Which quadrants had more blue crosses across all graphs, quadrants 1 and 3, or quadrants 2 and 4?",
+                    "required": true,
+                    "options": [
+                        { "label": "Quadrants 1 and 3", "value": 0 },
+                        { "label": "Quadrants 2 and 4", "value": 1 }
+                    ]
+                }
+            ]
         },
         "d-conclusion": {
             "type":"questionnaire",
             "nextButtonLocation": "belowStimulus",
             "response": [
                 {
-                    "id": "notify",
+                    "id": "dinosaur-notice",
                     "type": "radio",
-                    "location": "sidebar",
+                    "location": "aboveStimulus",
                     "hidden": false,
                     "prompt": "Did you notice the dinosaur made out of green circles?",
+                    "required": true,
+                    "options": [
+                        { "label": "No", "value": 0 },
+                        { "label": "Yes", "value": 1 }
+                    ]
+                }
+            ]
+        },
+        "g-conclusion": {
+            "type":"questionnaire",
+            "nextButtonLocation": "belowStimulus",
+            "response": [
+                {
+                    "id": "gorilla-notice",
+                    "type": "radio",
+                    "location": "aboveStimulus",
+                    "hidden": false,
+                    "prompt": "Did you notice the gorilla made out of green circles?",
                     "required": true,
                     "options": [
                         { "label": "No", "value": 0 },
@@ -211,7 +198,9 @@
             "chart-render-5",
             "chart-render-6",
             "chart-render-7",
-            "d-conclusion"
+            "more-common",
+            "d-conclusion",
+            "g-conclusion"
         ]
     }
 }

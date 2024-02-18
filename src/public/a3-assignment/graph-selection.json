@@ -1,38 +1,44 @@
 [
-    [],
-    [
-        32,
-        47,
-        4
-    ],
-    [
-        11,
-        40,
-        35
-    ],
-    [
-        6,
-        2,
-        42
-    ],
-    [
-        14,
-        10,
-        5
-    ],
-    [
-        17,
-        22,
-        null
-    ],
-    [
-        30,
-        16,
-        23
-    ],
-    [
-        46,
-        8,
-        20
-    ]
+    {
+        "circ-b": 32,
+        "cross-b": 47,
+        "circ-g": 4,
+        "quadrants": [3]
+    },
+    {
+        "circ-b": 11,
+        "cross-b": 40,
+        "circ-g": 35,
+        "quadrants": [1, 3]
+    },
+    {
+        "circ-b": 6,
+        "cross-b": 2,
+        "circ-g": 42,
+        "quadrants": [1, 4]
+    },
+    {
+        "circ-b": 14,
+        "cross-b": 10,
+        "circ-g": 5,
+        "quadrants": [2, 3]
+    },
+    {
+        "circ-b": 17,
+        "cross-b": 22,
+        "circ-g": null,
+        "quadrants": [1, 2, 3, 4]
+    },
+    {
+        "circ-b": 30,
+        "cross-b": 16,
+        "circ-g": 23,
+        "quadrants": [4]
+    },
+    {
+        "circ-b": 46,
+        "cross-b": 8,
+        "circ-g": 20,
+        "quadrants": [3, 4]
+    }
 ]

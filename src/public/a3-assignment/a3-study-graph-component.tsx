@@ -2,10 +2,13 @@ import * as d3 from 'd3';
 import { useRef, useEffect } from 'react';
 import { useCurrentStep } from '../../routes';
 import indices from './graph-selection.json';
-import dinosaur from './test-dinosaur.json';
+import { useNextStep } from '../../store/hooks/useNextStep';
+
+const GRAPH_DISPLAY_TIME = 1000; // Time to display in ms
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 function renderGraph() {
+  const { goToNextStep } = useNextStep();
   // Graph number
   const id = useCurrentStep();
 
@@ -17,11 +20,11 @@ function renderGraph() {
     const margin = {
       top: 20, right: 20, left: 80, bottom: 50,
     };
-    const width = (800) - margin.left - margin.right;
-    const height = (800) - margin.top - margin.bottom;
+    const width = (960) - margin.left - margin.right;
+    const height = (570) - margin.top - margin.bottom;
 
-    const domain = [-3, 3];
-    const range = [-3, 3];
+    const domain = [-3.2, 3.2];
+    const range = [-3.2, 3.2];
     const tickGap = 0.5;
 
     const x = d3.scaleLinear().domain(domain).range([0, width]);
@@ -84,22 +87,49 @@ function renderGraph() {
       cache: 'default',
     });
 
-    fetch(dataRead).then((r) => r.json()).then((data) => {
-      const fileIds = indices[parseInt(id.slice(-1), 10)];
+    fetch(dataRead).then((r) => r.json()).then(async (data) => {
+      const fileIds = indices[parseInt(id.slice(-1), 10) - 1];
       for (let t = 0; t < 3; t += 1) {
         let xValues: number[];
         let yValues: number[];
-        const fId = fileIds[t];
+        let quadrants: number[];
+        let fId: (number | null) = 0;
+        switch (t) {
+          case 0:
+            fId = fileIds['circ-b'];
+            break;
+          case 1:
+            fId = fileIds['cross-b'];
+            break;
+          default:
+            fId = fileIds['circ-g'];
+            break;
+        }
 
         if (fId !== null) {
           xValues = data[fId].x;
           yValues = data[fId].y;
+          quadrants = data[fId].quadrant;
         } else {
-          xValues = dinosaur[0];
-          yValues = dinosaur[1];
+          const dinoUrl = 'https://raw.githubusercontent.com/shivalimani/a3-Experiment/main/json/reformatted_dino_data.json';
+          const dinoRead = new Request(dinoUrl, {
+            method: 'GET',
+            mode: 'cors',
+            cache: 'default',
+          });
+          xValues = [0];
+          yValues = [0];
+          // eslint-disable-next-line no-await-in-loop
+          await fetch(dinoRead).then((r) => r.json()).then((dinoData) => {
+            xValues = dinoData.x;
+            yValues = dinoData.y;
+          });
         }
 
-        const zip = xValues.map((e: number, i: number) => ({ x: e, y: yValues[i] }));
+        let zip = xValues.map((e: number, i: number) => ({ x: e, y: yValues[i], q: (fId !== null ? quadrants[i] : 0) }));
+        if (t === 1) { // Blue crosses are the only ones divided into quadrants
+          zip = zip.filter((e) => fileIds.quadrants.includes(e.q));
+        }
 
         // Data
         svg.append('g')
@@ -118,6 +148,8 @@ function renderGraph() {
             }
           });
       }
+
+      setTimeout(() => goToNextStep(), GRAPH_DISPLAY_TIME);
     });
 
     // Clean up state
