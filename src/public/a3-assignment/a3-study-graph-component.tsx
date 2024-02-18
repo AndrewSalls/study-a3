@@ -7,7 +7,7 @@ import { useNextStep } from '../../store/hooks/useNextStep';
 const GRAPH_DISPLAY_TIME = 1000; // Time to display in ms
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-function renderGraph() {
+function renderTimedGraph() {
   const { goToNextStep } = useNextStep();
   // Graph number
   const id = useCurrentStep();
@@ -163,4 +163,4 @@ function renderGraph() {
   return <div id="scatter-wrapper" ref={contentRef} />;
 }
 
-export default renderGraph;
+export default renderTimedGraph;
